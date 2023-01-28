@@ -2,6 +2,78 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PolitekhSchedule.MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="1.3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2">
+            <Label Text="Суббота" TextColor="Black" FontSize="28"/>
+            <Label Text="28.01.2023" TextColor="Black" FontSize="16" HorizontalOptions="Center"/>
+        </StackLayout>
+        <Frame Grid.ColumnSpan="2" Grid.Row="2" BorderColor="Black" CornerRadius="20" Margin="20" Padding="2.5" BackgroundColor="Black" x:Name="OuterFrame">
+
+            <Frame Grid.Row="2" BorderColor="Black" BackgroundColor="#C0C0C0"  CornerRadius="20" x:Name="InnerFrame">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        
+                        
+                    </Grid.RowDefinitions>
+                    <Label x:Name="ClassName" Text="Методология методологии пельменей жареных" FontSize="12" LineBreakMode="CharacterWrap" />
+                    <Button x:Name="SkipButton" Clicked="SkipButton_Clicked" BackgroundColor="IndianRed" Text="Пропустить" Grid.Column="1" CornerRadius="10" WidthRequest="90" FontSize="10" Padding="-5" HeightRequest="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    <Label x:Name="StartTime" Text="8:30" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    <Label x:Name="Classroom" Text="00" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Column="3"/>
+                </Grid>
+            
+            
+          </Frame>
+        </Frame>
+        <Frame Padding="2" BackgroundColor="Black" CornerRadius="20" Grid.Row="3" Margin="30 20 60 30" Background="Black">
+            <Frame CornerRadius="20" BackgroundColor="Silver" x:Name="Group">
+                <Label FontSize="20" Text="ИС-34К" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Frame>
+        </Frame>
+        <Frame Padding="2" BackgroundColor="Black" CornerRadius="20" Grid.Row="3" Grid.Column="1" Margin="0 20 60 30" Background="Black">
+            <Frame CornerRadius="20" BackgroundColor="Silver" x:Name="MissedStats">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                <Label Text="Твои пропуски за:" FontSize="12" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Margin="-5" Grid.ColumnSpan="2"/>
+                    <Label Text="Неделю" FontSize="10" Grid.Row="1" Margin="-5"/>
+                    <Label Text="Месяц" FontSize="10" Grid.Row="2" Margin="-5"/>
+                    <Label Text="Год" FontSize="10" Grid.Row="3" Margin="-5"/>
+                    <Label Text="Подробнее..." Grid.Row="4" FontSize="12" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"/>
+                </Grid>
+            </Frame>
+        </Frame>
+    </Grid>
 
 
 

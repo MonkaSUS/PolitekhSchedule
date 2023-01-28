@@ -14,5 +14,10 @@ namespace PolitekhSchedule
         {
             InitializeComponent();
         }
+
+        private void SkipButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PolitekhSchedule.MainPage">
+             x:Class="PolitekhSchedule.MainPage"
+             BackgroundColor="#F0EAD6">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*"/>
@@ -14,12 +15,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2">
-            <Label Text="Суббота" TextColor="Black" FontSize="28"/>
-            <Label Text="28.01.2023" TextColor="Black" FontSize="16" HorizontalOptions="Center"/>
+            <Label Text="Суббота" TextColor="Black" FontSize="28" x:Name="WeekDay"/>
+            <Label Text="28.01.2023" TextColor="Black" FontSize="16" HorizontalOptions="Center" x:Name="LabelDate"/>
         </StackLayout>
-        <Frame Grid.ColumnSpan="2" Grid.Row="2" BorderColor="Black" CornerRadius="20" Margin="20" Padding="2.5" BackgroundColor="Black" x:Name="OuterFrame">
+        <Frame Grid.ColumnSpan="2" Grid.Row="2" BorderColor="Black"  Margin="20" Padding="1.5" BackgroundColor="Black" x:Name="OuterFrame">
 
-            <Frame Grid.Row="2" BorderColor="Black" BackgroundColor="#C0C0C0"  CornerRadius="20" x:Name="InnerFrame">
+            <Frame Grid.Row="2" BorderColor="Black" BackgroundColor="#C0C0C0"  x:Name="InnerFrame">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1.5*"/>
@@ -46,13 +47,13 @@
             
           </Frame>
         </Frame>
-        <Frame Padding="2" BackgroundColor="Black" CornerRadius="20" Grid.Row="3" Margin="30 20 60 30" Background="Black">
-            <Frame CornerRadius="20" BackgroundColor="Silver" x:Name="Group">
+        <Frame Padding="1" BackgroundColor="Black"  Grid.Row="3" Margin="20, 20, 60, 30" Background="Black">
+            <Frame  BackgroundColor="Silver" x:Name="Group">
                 <Label FontSize="20" Text="ИС-34К" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             </Frame>
         </Frame>
-        <Frame Padding="2" BackgroundColor="Black" CornerRadius="20" Grid.Row="3" Grid.Column="1" Margin="0 20 60 30" Background="Black">
-            <Frame CornerRadius="20" BackgroundColor="Silver" x:Name="MissedStats">
+        <Frame Padding="1" BackgroundColor="Black" Grid.Row="3" Grid.Column="1" Margin="0, 20, 40, 30" Background="Black">
+            <Frame  BackgroundColor="Silver" x:Name="MissedStats">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

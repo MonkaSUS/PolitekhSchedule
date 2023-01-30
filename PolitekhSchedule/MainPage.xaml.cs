@@ -30,7 +30,19 @@ namespace PolitekhSchedule
 
         private void SkipButton_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Объяснительная", "..директору ОПБОУ КГПК Морозовой О.И...." , "ок)");
+            
+            if ((sender as Button).BackgroundColor == Color.IndianRed)
+            {
+                DisplayAlert("Объяснительная", "..директору ОПБОУ КГПК Морозовой О.И...." , "ок)");
+                (sender as Button).BackgroundColor = Color.LimeGreen;
+                (sender as Button).Text = "УРА";
+            }
+            else
+            {
+                DisplayAlert("Задумайся", "Это действительно стоит твоего времени?", "да");
+                (sender as Button).BackgroundColor = Color.IndianRed;
+                (sender as Button).Text = "ПРОПУСТИТЬ";
+            }
         }
 
         private void MissedBox_Tapped(object sender, EventArgs e)

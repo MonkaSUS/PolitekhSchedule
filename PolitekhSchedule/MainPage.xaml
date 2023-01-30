@@ -39,7 +39,7 @@
                         
                     </Grid.RowDefinitions>
                     <Label x:Name="ClassName" Text="Методология методологии пельменей жареных" FontSize="12" LineBreakMode="CharacterWrap" />
-                    <Button x:Name="SkipButton" Clicked="SkipButton_Clicked" BackgroundColor="IndianRed" Text="Пропустить" Grid.Column="1" CornerRadius="10" WidthRequest="90" FontSize="10" Padding="-5" HeightRequest="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    <Button x:Name="SkipButton" Clicked="SkipButton_Clicked" BorderColor="Black" BorderWidth="0.5" BackgroundColor="IndianRed" Text="Пропустить" Grid.Column="1" CornerRadius="10" WidthRequest="90" FontSize="10" Padding="-5" HeightRequest="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                     <Label x:Name="StartTime" Text="8:30" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                     <Label x:Name="Classroom" Text="69" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Column="3"/>
                 </Grid>

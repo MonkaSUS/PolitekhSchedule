@@ -18,7 +18,7 @@
             <Label Text="Суббота" TextColor="Black" FontSize="28" x:Name="WeekDay"/>
             <Label Text="28.01.2023" TextColor="Black" FontSize="16" HorizontalOptions="Center" x:Name="LabelDate"/>
         </StackLayout>
-        <Frame Grid.ColumnSpan="2" Grid.Row="2" BorderColor="Black"  Margin="20" Padding="1.5" BackgroundColor="Black" x:Name="OuterFrame">
+        <Frame Grid.ColumnSpan="2" Grid.Row="2" BorderColor="Black"  Margin="0, 0, 0, 40" Padding="0, 1, 0, 1" BackgroundColor="Black" x:Name="OuterFrame">
 
             <Frame Grid.Row="2" BorderColor="Black" BackgroundColor="#C0C0C0"  x:Name="InnerFrame">
                 <Grid>
@@ -41,19 +41,25 @@
                     <Label x:Name="ClassName" Text="Методология методологии пельменей жареных" FontSize="12" LineBreakMode="CharacterWrap" />
                     <Button x:Name="SkipButton" Clicked="SkipButton_Clicked" BackgroundColor="IndianRed" Text="Пропустить" Grid.Column="1" CornerRadius="10" WidthRequest="90" FontSize="10" Padding="-5" HeightRequest="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                     <Label x:Name="StartTime" Text="8:30" Grid.Column="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-                    <Label x:Name="Classroom" Text="00" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Column="3"/>
+                    <Label x:Name="Classroom" Text="69" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Column="3"/>
                 </Grid>
             
             
           </Frame>
         </Frame>
-        <Frame Padding="1" BackgroundColor="Black"  Grid.Row="3" Margin="20, 20, 60, 30" Background="Black">
+        <Frame Padding="1" BackgroundColor="Black"  Grid.Row="3" Margin="10, 40, 60, 60" Background="Black">
             <Frame  BackgroundColor="Silver" x:Name="Group">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GroupBox_Tapped"/>
+                </Frame.GestureRecognizers>
                 <Label FontSize="20" Text="ИС-34К" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             </Frame>
         </Frame>
-        <Frame Padding="1" BackgroundColor="Black" Grid.Row="3" Grid.Column="1" Margin="0, 20, 40, 30" Background="Black">
+        <Frame Padding="1" BackgroundColor="Black" Grid.Row="3" Grid.Column="1" Margin="0, 0, 30, 30" Background="Black">
             <Frame  BackgroundColor="Silver" x:Name="MissedStats">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="MissedBox_Tapped"/>
+            </Frame.GestureRecognizers>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

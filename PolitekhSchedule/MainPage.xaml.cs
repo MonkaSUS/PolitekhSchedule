@@ -11,7 +11,7 @@ namespace PolitekhSchedule
 {
     public partial class MainPage : ContentPage
     {
-        CultureInfo culture = new CultureInfo("ru-RU"); //пока что используется только для работы дат, может пригодится в будущем.
+        CultureInfo culture = new CultureInfo("ru-RU"); //пока что используется только для работы дат, может пригодиться в будущем.
         public MainPage()
         {
             InitializeComponent();
@@ -30,7 +30,17 @@ namespace PolitekhSchedule
 
         private void SkipButton_Clicked(object sender, EventArgs e)
         {
+            DisplayAlert("Объяснительная", "..директору ОПБОУ КГПК Морозовой О.И...." , "ок)");
+        }
 
+        private void MissedBox_Tapped(object sender, EventArgs e)
+        {
+            DisplayAlert("ацтарожна!","статистика пропущеных пар отсутствует", "успех" );
+        }
+
+        private void GroupBox_Tapped(object sender, EventArgs e)
+        {
+            DisplayAlert("!", "Эгоцентризм-собая познавательная позиция, характеризующаяся неспособностью к координированию различных точек зрения, что является качественным своеобразием мышления ребенка.", "бля");
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PolitekhSchedule
 {
@@ -58,12 +59,30 @@ namespace PolitekhSchedule
             DisplayAlert("!", "Эгоцентризм-собая познавательная позиция, характеризующаяся неспособностью к координированию различных точек зрения, что является качественным своеобразием мышления ребенка.", "бля");
         }
 
-        private void DaySkippedButton_Clicked(object sender, EventArgs e)
+        private async void DaySkippedButton_Clicked(object sender, EventArgs e)
         {
             //Метод будет вызываться кнопкой, находящейся у каждого элемента ListView
             //if((sender as Para).IsSkipped){диалогбокс да/нет, чтобы изменить решение о пропуске пары. его результат либо делает SkippedClasses--; либо ничего; }
             //else if(!(sender as Para).IsSkipped){диалог бокс да/нет, чтобы подтвердить пропущенную пару. true=>SkippedClasses++; false=>ничего}
             //Перменная SkippedClasses будет храниться локально, скорее всего с помощью SQLite
+            if (SkipButton.BackgroundColor == Color.IndianRed)
+            {
+                bool result = await DisplayAlert("Уверен?", "Уверен?", "Да", "Нет");
+                if (result)
+                {
+                    SkipButton.BackgroundColor = Color.LimeGreen;
+                    SkipButton.Text = "УРА";
+                }
+            }
+            else if (SkipButton.BackgroundColor == Color.LimeGreen)
+            {
+                bool result = await DisplayAlert("Уверен?", "Уверен?", "Да", "Нет");
+                if (result)
+                {
+                    SkipButton.BackgroundColor = Color.IndianRed;
+                    SkipButton.Text = "ПРОПУСТИТЬ";
+                }
+            }
         }
     }
 }

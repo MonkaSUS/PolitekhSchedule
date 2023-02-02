@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PolitekhSchedule.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -31,6 +32,7 @@ namespace PolitekhSchedule
         private void SkipButton_Clicked(object sender, EventArgs e)
         {
             
+
             if ((sender as Button).BackgroundColor == Color.IndianRed)
             {
                 DisplayAlert("Объяснительная", "..директору ОПБОУ КГПК Морозовой О.И...." , "ок)");
@@ -45,14 +47,23 @@ namespace PolitekhSchedule
             }
         }
 
-        private void MissedBox_Tapped(object sender, EventArgs e)
+        private async void MissedBox_Tapped(object sender, EventArgs e)
         {
-            DisplayAlert("ацтарожна!","статистика пропущеных пар отсутствует", "успех" );
+            await Navigation.PushAsync(new StatisticsPage());
+            
         }
 
         private void GroupBox_Tapped(object sender, EventArgs e)
         {
             DisplayAlert("!", "Эгоцентризм-собая познавательная позиция, характеризующаяся неспособностью к координированию различных точек зрения, что является качественным своеобразием мышления ребенка.", "бля");
+        }
+
+        private void DaySkippedButton_Clicked(object sender, EventArgs e)
+        {
+            //Метод будет вызываться кнопкой, находящейся у каждого элемента ListView
+            //if((sender as Para).IsSkipped){диалогбокс да/нет, чтобы изменить решение о пропуске пары. его результат либо делает SkippedClasses--; либо ничего; }
+            //else if(!(sender as Para).IsSkipped){диалог бокс да/нет, чтобы подтвердить пропущенную пару. true=>SkippedClasses++; false=>ничего}
+            //Перменная SkippedClasses будет храниться локально, скорее всего с помощью SQLite
         }
     }
 }

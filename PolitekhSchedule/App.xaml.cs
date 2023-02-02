@@ -10,7 +10,8 @@ namespace PolitekhSchedule
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SchedulePage();
+            
         }
 
         protected override void OnStart()

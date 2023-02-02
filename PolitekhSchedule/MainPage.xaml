@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PolitekhSchedule.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             
              BackgroundColor="#F0EAD6">
     <Grid>
         <Grid.RowDefinitions>
@@ -14,10 +16,20 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Frame Padding="1"  Margin="10, 5, 5, 20" VerticalOptions="Center" Background="Black">
+            <Frame x:Name="Group" Padding="0">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GroupBox_Tapped"/>
+                </Frame.GestureRecognizers>
+                <Label FontSize="20" Text="ИС-34К" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Frame>
+        </Frame>
         <StackLayout Grid.Row="1" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="2">
-            <Label Text="Суббота" TextColor="Black" FontSize="28" x:Name="WeekDay"/>
+            <Label Text="Суббота" TextColor="Black" FontSize="28" x:Name="WeekDay" HorizontalOptions="Center"/>
             <Label Text="28.01.2023" TextColor="Black" FontSize="16" HorizontalOptions="Center" x:Name="LabelDate"/>
+            <Button Text="Я ПРОПУСТИЛ ДЕНЬ" HorizontalOptions="Center" BorderColor="Black" BorderWidth="1.2" x:Name="DaySkippedButton" Clicked="DaySkippedButton_Clicked"/>
         </StackLayout>
+        
         <Frame Grid.ColumnSpan="2" Grid.Row="2" BorderColor="Black"  Margin="0, 0, 0, 40" Padding="0, 1, 0, 1" BackgroundColor="Black" x:Name="OuterFrame">
 
             <Frame Grid.Row="2" BorderColor="Black" BackgroundColor="#C0C0C0"  x:Name="InnerFrame">
@@ -47,39 +59,15 @@
             
           </Frame>
         </Frame>
-        <Frame Padding="1" BackgroundColor="Black"  Grid.Row="3" Margin="10, 40, 60, 60" Background="Black">
-            <Frame  BackgroundColor="Silver" x:Name="Group">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GroupBox_Tapped"/>
-                </Frame.GestureRecognizers>
-                <Label FontSize="20" Text="ИС-34К" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            </Frame>
-        </Frame>
-        <Frame Padding="1" BackgroundColor="Black" Grid.Row="3" Grid.Column="1" Margin="0, 0, 30, 30" Background="Black">
-            <Frame  BackgroundColor="Silver" x:Name="MissedStats">
+
+        <Frame Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"  x:Name="MissedStats">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="MissedBox_Tapped"/>
             </Frame.GestureRecognizers>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                <Label Text="Твои пропуски за:" FontSize="12" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Margin="-5" Grid.ColumnSpan="2"/>
-                    <Label Text="Неделю" FontSize="10" Grid.Row="1" Margin="-5"/>
-                    <Label Text="Месяц" FontSize="10" Grid.Row="2" Margin="-5"/>
-                    <Label Text="Год" FontSize="10" Grid.Row="3" Margin="-5"/>
-                    <Label Text="Подробнее..." Grid.Row="4" FontSize="12" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"/>
-                </Grid>
-            </Frame>
+            <Label Text="Моя статистика..."/>
+
         </Frame>
+        
     </Grid>
 
 
